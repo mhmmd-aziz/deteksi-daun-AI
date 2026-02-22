@@ -50,7 +50,7 @@ function About() {
           <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tight">
             Mewujudkan <span className="text-emerald-500">INNOVATE</span>
             <br />
-            dengan LeafAI.
+            dengan OenKayeeAI.
           </h1>
 
           <p className="text-xl text-emerald-50/60 max-w-2xl mt-8 leading-relaxed">
@@ -82,7 +82,7 @@ function About() {
 
               <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
                 <p>
-                  LeafAI lahir dari titik temu antara <strong>teknologi mutakhir</strong> dan <strong>kebutuhan pangan global</strong>. 
+                  OenKayeeAI lahir dari titik temu antara <strong>teknologi mutakhir</strong> dan <strong>kebutuhan pangan global</strong>. 
                   Kami percaya bahwa petani tidak boleh berjuang sendiri melawan wabah penyakit tanaman yang seringkali terlambat dideteksi.
                 </p>
                 <p>

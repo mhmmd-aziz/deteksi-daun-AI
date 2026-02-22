@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react'
+import React, { useState, useRef, useCallback } from 'react'
 import axios from 'axios'
 import { motion, AnimatePresence } from 'framer-motion'
 import Webcam from 'react-webcam'
@@ -35,19 +35,23 @@ const diseaseTranslation = {
 }
 
 function Detection() {
-  const [selectedFile, setSelectedFile] = useState(null)
-  const [preview, setPreview] = useState(null)
-  const [result, setResult] = useState(null)
+  //  Menambahkan tipe data <File | null>, <string | null>, dan <any>
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [preview, setPreview] = useState<string | null>(null)
+  const [result, setResult] = useState<any>(null) 
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<string | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [aiSolution, setAiSolution] = useState("")
   const [loadingAi, setLoadingAi] = useState(false)
   const [showWebcam, setShowWebcam] = useState(false)
-  const webcamRef = useRef(null)
+  
+  // Menambahkan tipe data <Webcam>
+  const webcamRef = useRef<Webcam>(null)
 
-  const handleFileSelect = (event) => {
-    const file = event.target.files[0]
+  // Menambahkan tipe data parameter event
+  const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
     if (file) {
       setSelectedFile(file)
       setPreview(URL.createObjectURL(file))
@@ -60,7 +64,8 @@ function Detection() {
   }
 
   const captureWebcam = useCallback(async () => {
-    const imageSrc = webcamRef.current.getScreenshot()
+    //  Menambahkan tanda tanya (?) untuk optional chaining
+    const imageSrc = webcamRef.current?.getScreenshot()
     if (imageSrc) {
       const res = await fetch(imageSrc)
       const blob = await res.blob()
@@ -75,11 +80,13 @@ function Detection() {
     }
   }, [webcamRef])
 
-  const fetchGrokSolution = async (diseaseName) => {
+  // FIX: Menambahkan tipe data parameter (diseaseName: string)
+  const fetchGrokSolution = async (diseaseName: string) => {
     setLoadingAi(true);
     setAiSolution("");
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+      // FIX: Menambahkan '(import.meta as any)' untuk bypass error TS environment
+      const API_URL = (import.meta as any).env.VITE_API_URL || 'http://127.0.0.1:8000';
       const response = await axios.post(`${API_URL}/api/solution`, { disease_name: diseaseName });
       setAiSolution(response.data?.solution || "Solusi tidak tersedia untuk saat ini.");
     } catch (error) {
@@ -97,10 +104,12 @@ function Detection() {
     formData.append('file', selectedFile)
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+      const API_URL = (import.meta as any).env.VITE_API_URL || 'http://127.0.0.1:8000';
       const response = await axios.post(`${API_URL}/predict`, formData)
       const rawPrediction = response.data.prediction;
-      const translatedName = diseaseTranslation[rawPrediction] || rawPrediction.replace(/_/g, ' ');
+      
+      // FIX: Memberitahu TS bahwa rawPrediction adalah bagian dari index diseaseTranslation
+      const translatedName = diseaseTranslation[rawPrediction as keyof typeof diseaseTranslation] || rawPrediction.replace(/_/g, ' ');
       const isHealthy = translatedName.toLowerCase().includes("sehat");
 
       setResult({ ...response.data, translatedName, isHealthy })
@@ -276,7 +285,7 @@ function Detection() {
                     <div className="space-y-3">
                       <div className="flex items-center gap-2 text-slate-800 font-bold ml-1">
                         <Zap size={16} className="text-amber-500 fill-amber-500" />
-                        Rekomendasi AI Grok
+                        Rekomendasi AI 
                       </div>
                       <div className="p-5 bg-slate-900 text-slate-200 rounded-2xl text-sm leading-relaxed shadow-2xl border border-slate-800">
                         {loadingAi ? (

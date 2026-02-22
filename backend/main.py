@@ -100,10 +100,10 @@ async def predict_image(file: UploadFile = File(...)):
 
 @app.post("/api/solution")
 async def get_solution(request: SolutionRequest):
-    print(f"\n➡️ Menerima permintaan solusi untuk penyakit: {request.disease_name}")
+    print(f"\n Menerima permintaan solusi untuk penyakit: {request.disease_name}")
     
     if not GROK_API_KEY:
-        print("❌ API Key tidak terbaca dari .env!")
+        print(" API Key tidak terbaca dari .env!")
         raise HTTPException(status_code=500, detail="API Key tidak ditemukan di backend")
 
     url = "https://api.groq.com/openai/v1/chat/completions"
