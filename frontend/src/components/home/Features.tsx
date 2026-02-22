@@ -65,7 +65,7 @@ export const Features: React.FC = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-white">
-            Kenapa Memilih <span className="text-emerald-400">LeafAI</span>?
+            Kenapa Memilih <span className="text-emerald-400">OenKayeeAI</span>?
           </h2>
           <p className="text-emerald-100/60 mt-6 max-w-2xl mx-auto">
             Solusi berbasis AI yang dirancang untuk efisiensi, akurasi, dan keberlanjutan pertanian modern.
