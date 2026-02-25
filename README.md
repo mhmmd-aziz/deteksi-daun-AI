@@ -1,11 +1,12 @@
-# LeafAI: Sistem Deteksi Dini Penyakit Tanaman Berbasis Deep Learning
+# OenKayeeAI: Sistem Deteksi Dini Penyakit Tanaman Berbasis Deep Learning
+
+## Nama Tim : AAAclan
 
 ## Institusi
 [ Pliteknik Negeri Lhokseumawe ]
 
 ## Anggota Tim
-- Ketua: Imzy
-- Anggota 1: [Amirullah]
+- Ketua    : [Amirullah]
 - Anggota 2: [Muhammad Aziz]
 - Anggota 3: [Muhammad Alfisyahrin Muzhaffar]
 
