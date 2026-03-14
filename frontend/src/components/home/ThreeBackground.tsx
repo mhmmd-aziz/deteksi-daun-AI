@@ -3,7 +3,11 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Environment } from '@react-three/drei'
 import AnimatedLeafModel from './AnimatedLeafModel'
 
-export default function ThreeBackground() {
+interface Props {
+  activeIndex: number;
+}
+
+export default function ThreeBackground({ activeIndex }: Props) {
   return (
     <div className="fixed inset-0 z-0">
       <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
@@ -11,9 +15,10 @@ export default function ThreeBackground() {
         <pointLight position={[10, 10, 10]} intensity={1.5} />
         <Environment preset="forest" />
         <Suspense fallback={null}>
-          <AnimatedLeafModel />
+          <AnimatedLeafModel activeIndex={activeIndex} />
         </Suspense>
-        <OrbitControls enableZoom={false} enablePan={false} />
+        {/* OrbitControls kita matikan rotasinya agar tidak mengganggu efek putaran carousel */}
+        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
       </Canvas>
     </div>
   )
