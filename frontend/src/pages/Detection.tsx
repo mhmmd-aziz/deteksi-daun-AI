@@ -130,7 +130,7 @@ function Detection() {
   }
 
   return (
-<div className="relative min-h-screen overflow-hidden bg-[#022c22] text-white font-sans pt-28 md:pt-36">
+<div className="relative min-h-screen overflow-hidden bg-[#022c22] text-white font-sans pt-12 pb-12 md:pt-36 px-4 md:px-8">
       <div className="max-w-[1170px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* LEFT COLUMN: INFORMATION */}
