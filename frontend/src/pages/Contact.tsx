@@ -116,7 +116,7 @@ function Contact() {
                   </p>
 
                   <p className="text-white font-semibold text-lg">
-                    Indonesia
+                    Indonesia, Aceh
                   </p>
                 </div>
               </div>
