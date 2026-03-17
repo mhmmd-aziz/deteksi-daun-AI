@@ -3,7 +3,7 @@
 ## Nama Tim : AAAclan
 
 ## Institusi
-[ Pliteknik Negeri Lhokseumawe ]
+[ Politeknik Negeri Lhokseumawe ]
 
 ## Anggota Tim
 - Ketua    : [Amirullah]
