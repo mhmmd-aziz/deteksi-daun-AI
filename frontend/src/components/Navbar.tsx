@@ -1,10 +1,8 @@
-"use client"
-
 import React, { useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
-import { Menu, Leaf, ArrowRight } from "lucide-react"
+import { Menu } from "lucide-react"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button" // Pastikan path ini sesuai struktur folder lu
 import {
   Sheet,
   SheetContent,
@@ -51,20 +49,25 @@ export default function Navbar() {
           animate={{
             backdropFilter: scrolled ? "blur(24px)" : "blur(12px)",
             backgroundColor: scrolled
-              ? "rgba(0,0,0,0.6)"
-              : "rgba(0,0,0,0.4)",
+              ? "rgba(29, 29, 29, 0.6)"
+              : "rgba(15, 15, 15, 0.4)",
           }}
           transition={{ duration: 0.3 }}
           className="flex items-center justify-between rounded-2xl border border-white/10 px-6 py-3 shadow-2xl"
         >
-          {/* Brand */}
-          <Link to="/" className="flex items-center gap-2 group">
+          {/* ================= BRANDING / LOGO DESKTOP ================= */}
+          <Link to="/" className="flex items-center gap-3 group">
             <motion.div
-              whileHover={{ rotate: 15, scale: 1.1 }}
+              whileHover={{ rotate: 10, scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="rounded-xl bg-green-500 p-2 shadow-lg shadow-green-500/30"
+              className="flex items-center justify-center"
             >
-              <Leaf className="text-white" size={18} />
+              {/* Ini dia pemanggil logo.png nya */}
+              <img 
+                src="/logo.png" 
+                alt="OenKayeeAI Logo" 
+                className="w-9 h-9 object-contain drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]" 
+              />
             </motion.div>
             <span className="text-lg font-black tracking-tight text-white">
               OenKayee<span className="text-green-400">AI</span>
@@ -101,32 +104,15 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          {/* <div className="hidden md:flex">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link to="/detect">
-                <Button className="rounded-xl bg-green-500 hover:bg-green-600 text-white shadow-lg shadow-green-500/30">
-                  Mulai Analisis
-                  <ArrowRight className="ml-2" size={16} />
-                </Button>
-              </Link>
-            </motion.div>
-          </div> */}
-
           {/* Mobile Menu */}
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button
-                  size="icon"
-                  variant="ghost"
-                  className="text-white hover:bg-white/10"
+                <button
+                  className="p-2 rounded-lg text-white hover:bg-white/10 transition-colors focus:outline-none"
                 >
                   <Menu size={20} />
-                </Button>
+                </button>
               </SheetTrigger>
 
               <SheetContent
@@ -145,15 +131,22 @@ export default function Navbar() {
                   className="flex flex-col h-full p-6"
                 >
                   <SheetHeader>
-                    <SheetTitle className="flex items-center gap-2 text-white">
+                    {/* ================= BRANDING / LOGO MOBILE ================= */}
+                    <SheetTitle className="flex items-center gap-3 text-white">
                       <motion.div
                         initial={{ rotate: -20, opacity: 0 }}
                         animate={{ rotate: 0, opacity: 1 }}
                         transition={{ delay: 0.2 }}
                       >
-                        <Leaf className="text-green-400" size={20} />
+                        <img 
+                          src="/logo.png" 
+                          alt="OenKayeeAI Logo" 
+                          className="w-8 h-8 object-contain" 
+                        />
                       </motion.div>
-                      Greenx.
+                      <span className="text-lg font-black tracking-tight">
+                        OenKayee<span className="text-green-400">AI</span>
+                      </span>
                     </SheetTitle>
                   </SheetHeader>
 
@@ -190,15 +183,8 @@ export default function Navbar() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 }}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
                     >
-                      {/* <Link to="/detect" className="w-full">
-                        <Button className="w-full rounded-xl bg-green-500 hover:bg-green-600 text-white shadow-lg shadow-green-500/30">
-                          Mulai Analisis
-                          <ArrowRight className="ml-2" size={16} />
-                        </Button>
-                      </Link> */}
+                      {/* Footer konten mobile jika ada */}
                     </motion.div>
                   </SheetFooter>
                 </motion.div>

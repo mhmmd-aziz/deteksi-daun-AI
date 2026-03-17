@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="relative w-full bg-[#052e16] pt-20 pb-10 overflow-hidden border-t border-white/5">
+<footer className="relative w-full bg-gradient-to-b from-[#022c22] to-[#021a14] pt-20 pb-10 overflow-hidden border-t border-white/5">
       {/* Efek Background Glow */}
       <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-emerald-500/10 blur-[100px] rounded-full z-0" />
       
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-emerald-100/50">
                 <MapPin size={18} className="text-emerald-500 shrink-0" />
-                <span>Jl. Agroteknologi No. 12, Jakarta Selatan</span>
+                <span>Lhokseumawe</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-emerald-100/50">
                 <Phone size={18} className="text-emerald-500 shrink-0" />
@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3 text-sm text-emerald-100/50">
                 <Mail size={18} className="text-emerald-500 shrink-0" />
-                <span>hello@greenx.ai</span>
+                <span>hello@oenkayee.ai</span>
               </li>
             </ul>
           </div>
@@ -126,7 +126,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-emerald-200/20 text-[11px]">
-          <p>© 2026 Greenx. Built for a Greener Tomorrow.</p>
+          <p>© 2026 OenKayeeAi. Built for a Greener Tomorrow.</p>
           <div className="flex gap-8 font-bold uppercase tracking-widest">
              <span className="hover:text-emerald-400/50 transition-colors cursor-pointer">Privacy</span>
              <span className="hover:text-emerald-400/50 transition-colors cursor-pointer">Terms</span>
