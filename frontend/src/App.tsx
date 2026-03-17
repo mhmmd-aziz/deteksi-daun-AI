@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Detection from "./pages/Detection";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import ScrollToTop from "./components/ui/ScrollToTop"; // Pastikan path ini benar
+import FallingLeaves from "./components/FallingLeaves";
 
 const App: React.FC = () => {
   return (
@@ -14,8 +16,10 @@ const App: React.FC = () => {
         {/* Navbar tetap di atas */}
         <Navbar />
 
+        {/* <FallingLeaves /> */}
+
         {/* Main content dengan flex-grow agar mendorong footer ke bawah */}
-        <main className="w-full flex-grow">
+        <main className="w-full flex-grow ">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/detect" element={<Detection />} />
@@ -26,6 +30,9 @@ const App: React.FC = () => {
         
         {/* Footer akan muncul di semua halaman */}
         <Footer />
+
+        {/* Tombol Scroll To Top */}
+        <ScrollToTop />
         
         {/* Efek Gradient Global */}
         <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">

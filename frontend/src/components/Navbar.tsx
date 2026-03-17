@@ -49,8 +49,8 @@ export default function Navbar() {
           animate={{
             backdropFilter: scrolled ? "blur(24px)" : "blur(12px)",
             backgroundColor: scrolled
-              ? "rgba(0,0,0,0.6)"
-              : "rgba(0,0,0,0.4)",
+              ? "rgba(29, 29, 29, 0.6)"
+              : "rgba(15, 15, 15, 0.4)",
           }}
           transition={{ duration: 0.3 }}
           className="flex items-center justify-between rounded-2xl border border-white/10 px-6 py-3 shadow-2xl"
