@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function AnimatedLeafModel({ activeIndex }: Props) {
-  const m0 = useGLTF('/hitem3d.glb')
+  const m0 = useGLTF('/hitem3d1.glb')
   const m1 = useGLTF('/paprika.glb')
   const m2 = useGLTF('/tomat.glb')
   const m3 = useGLTF('/kentang.glb')
@@ -38,7 +38,7 @@ export default function AnimatedLeafModel({ activeIndex }: Props) {
   // Angka Positif (misal 1.0) = Geser Kanan
   // Angka Negatif (misal -1.0) = Geser Kiri
   const models = [
-    { scene: m0.scene, baseScale: 2.5, offsetY: 0.8, offsetX: 0.9 },         // Globe (Pas di tengah)
+    { scene: m0.scene, baseScale: 2.7, offsetY: 0.6, offsetX: 0.9 },         // Globe (Pas di tengah)
     { scene: m1.scene, baseScale: 2.5, offsetY: -1.5, offsetX: -0.8 },    // Paprika (Geser Kanan dikit)
     { scene: m2.scene, baseScale: 2.5, offsetY: -1.5, offsetX: 0.7 },    // Tomat (Geser Kanan agak jauh)
     { scene: m3.scene, baseScale: 2.5, offsetY: -1.5, offsetX: -0.889 },    // Kentang (Geser Kanan dikit)
