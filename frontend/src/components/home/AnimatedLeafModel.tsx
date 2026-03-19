@@ -9,9 +9,9 @@ interface Props {
 
 export default function AnimatedLeafModel({ activeIndex }: Props) {
   const m0 = useGLTF('/hitem3d1.glb')
-  const m1 = useGLTF('/paprika.glb')
-  const m2 = useGLTF('/tomat.glb')
-  const m3 = useGLTF('/kentang.glb')
+  const m1 = useGLTF('/paprika1.glb')
+  const m2 = useGLTF('/tomat1.glb')
+  const m3 = useGLTF('/kentang1.glb')
 
   const groupRef = useRef<THREE.Group>(null)
   const carouselRef = useRef<THREE.Group>(null)
