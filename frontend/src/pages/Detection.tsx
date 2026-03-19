@@ -130,7 +130,7 @@ function Detection() {
   }
 
   return (
-<div className="relative min-h-screen overflow-hidden bg-[#022c22] text-white font-sans pt-12 pb-12 md:pt-36 px-4 md:px-8">
+<div className="relative min-h-screen overflow-hidden bg-[#022c22] text-white font-sans pt-28 pb-12 md:pt-36 px-4 md:px-8">
       <div className="max-w-[1170px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* LEFT COLUMN: INFORMATION */}
@@ -150,7 +150,7 @@ function Detection() {
               <span className="text-emerald-500">Ramah Lingkungan</span>
             </h1>
             <p className="text-lg text-emerald-50/70 leading-relaxed max-w-lg">
-              Lindungi tanaman Anda dari ancaman penyakit dengan teknologi Computer Vision. 
+              Lindungi tanaman Anda dari ancaman penyakit dengan teknologi CNN. 
               Deteksi dini membantu mengurangi penggunaan pestisida berlebih dan menjaga ekosistem tetap seimbang.
             </p>
           </div>
